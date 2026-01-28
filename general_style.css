@@ -8,7 +8,7 @@
 
 }
 
-containerPreload
+CardPhoto11
 /* div.box-iconWhatsapp{
 right: 0px;
 
@@ -916,6 +916,10 @@ div#myPortifolio2 a  img{
     min-width: 500px;
     height: auto;
     max-height: 500px;
+   transition: all 3s;
+}
+#imgCarossel.classMyimg{
+    border-radius: 50%;
 }
 
 
@@ -958,19 +962,40 @@ div#myPortifolio2 a  img{
         object-fit: cover;
     }
 }
+ .buttonNexts{display: none;}
+  .buttonBack{display: none;} 
 @media(max-width:640px){
+  .buttonNexts{
+        position: absolute;
+        left: 5px;
+        z-index: 2;
+        color: rgb(189, 3, 58);
+        font-size: 19px;
+        padding: 5px;
+        border: none;
+        background: none;
+        outline: none;
+        display: block;
+    }
+    .buttonBack{
+        display: block;
+        position: absolute;
+        right: 5px;
+        color: rgb(189, 3, 58);
+        z-index: 2;
+        font-size: 19px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        background: none;
+    }
     div#myPortifolio2{
-        display: flex;
-        align-items: center;
-        flex-wrap: nowrap;
-        justify-content:start;
+        width: 350px ;
+        position: relative;
          max-width: 350px;
-         padding: 1px;
-         overflow: auto;
-         scroll-snap-type:x mandatory ;
-         -webkit-overflow-scrolling: touch;
-         scroll-snap-align: start;
-         scroll-behavior: smooth;
+        padding: 1px;
+      height: 200px;
+      overflow-x: hidden;
      }
      div#myPortifolio2 a  img{
         width: 100%;
@@ -978,7 +1003,29 @@ div#myPortifolio2 a  img{
         height: auto;
         max-height: 500px;
         object-fit: cover;
+      
     }
+     div#myPortifolio2 a{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+     transition: 5s all;
+       border-radius: 100%;
+     
+     }
+
+    .linkCarossel{
+       display: none;
+       opacity: 0;
+       border-radius: 100%;
+    }
+    .classShowCarossel{
+       display: block;
+        opacity: 1;
+          animation: fadeVisibility 0.6s;
+       
+    }
+
 }
 
 
@@ -1492,8 +1539,35 @@ div#ContainerCard div#Cardbox div#CardPhoto10 {
     background-repeat: no-repeat;
     margin-bottom: 20px;
     }
+div#ContainerCard div#Cardbox div#CardPhoto12 {
+    background-image:url(img/reacticon.png) ;
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    }
+div#ContainerCard div#Cardbox div#CardPhoto13 {
+    background-image:url(img/figmaicon.png) ;
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    }
 div#ContainerCard div#Cardbox div#CardPhoto11 {
     background-image:url(img/pythonl_icon.png) ;
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    }
+div#ContainerCard div#Cardbox div#CardPhoto14 {
+    background-image:url(img/github_icon.png) ;
     width: 65px;
     height: 65px;
     background-position: center;
@@ -1997,3 +2071,65 @@ section.containerPreload div span:nth-child(5){
 }
 }
 
+/* inicio tratamento acordion */
+.accordions {
+  border-radius: 20px;
+  padding: 5px;
+ 
+ 
+}
+.accordions .accordion {
+  border-bottom: 1px solid #eee;
+}
+.accordions .last-accordion {
+  border-bottom: none;
+}
+.accordion-head {
+  padding: 20px;  
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f272b;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+  border-bottom: 1px solid #fff;
+}
+@media screen and (min-width: 768px) {
+  .accordion-head {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+}
+.accordion-head .icon {
+  float: right;
+  transition: transform 200ms ease-in-out;
+}
+.accordion-head.is-open {
+  color: rgb(189, 3, 58);
+  border-bottom: none;
+}
+.accordion-head.is-open .icon {
+  transform: rotate(45deg);
+}
+.accordion-body {
+  overflow: hidden;
+  height: 0;
+  transition: height 300ms ease-in-out;
+  border-bottom: 1px solid #fff;
+}
+.accordion-body > .content {
+  padding: 20px;
+  padding-top: 0;
+}
+div.showAcordion{
+    color:rgb(189, 3, 58) ;
+    animation: animationAcordion 1s infinite alternate ;
+}
+@keyframes animationAcordion{
+    to{
+        transform: translateY(5px);
+    }
+}
+.acordionContainer{
+    max-width: 700px;
+}
+/* fim tratamento acordion */
